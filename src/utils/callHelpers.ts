@@ -136,7 +136,7 @@ const cakeBnbPid = 2 // Cake-Matic LP
 const cakeBnbFarm = farms.find((farm) => farm.pid === cakeBnbPid)
 
 const CAKE_TOKEN = new Token(chainId, getCakeAddress(), 18)
-const WBNB_TOKEN = new Token(chainId, tokens.wbnb.address[chainId], 18)
+const WBNB_TOKEN = new Token(chainId, tokens.wmatic.address[chainId], 18)
 const CAKE_BNB_TOKEN = new Token(chainId, getAddress(cakeBnbFarm.lpAddresses), 18)
 
 /**
