@@ -16,7 +16,7 @@ const farms: FarmConfig[] = [
     quoteToken: tokens.wbnb,
   },
   {
-    pid: 1,
+    pid: 2,
     lpSymbol: 'CAKE-MATIC LP',
     lpAddresses: {
       80001: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
@@ -26,7 +26,7 @@ const farms: FarmConfig[] = [
     quoteToken: tokens.wmatic,
   },
   {
-    pid: 2,
+    pid: 3,
     lpSymbol: 'USDC-MATIC LP',
     lpAddresses: {
       80001: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
