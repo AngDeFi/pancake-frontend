@@ -12,48 +12,48 @@ const getFarmFromTokenSymbol = (farms: Farm[], tokenSymbol: string, preferredQuo
 const getFarmBaseTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: BigNumber): BigNumber => {
   const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
 
-  if (farm.quoteToken.symbol === 'BUSD') {
+  if (farm.quoteToken.symbol === 'USDC') {
     return hasTokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (farm.quoteToken.symbol === 'wBNB') {
+  if (farm.quoteToken.symbol === 'wMATIC') {
     return hasTokenPriceVsQuote ? bnbPriceBusd.times(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  // We can only calculate profits without a quoteTokenFarm for BUSD/BNB farms
+  // We can only calculate profits without a quoteTokenFarm for USDC/BNB farms
   if (!quoteTokenFarm) {
     return BIG_ZERO
   }
 
   // Possible alternative farm quoteTokens:
   // UST (i.e. MIR-UST), pBTC (i.e. PNT-pBTC), BTCB (i.e. bBADGER-BTCB), ETH (i.e. SUSHI-ETH)
-  // If the farm's quote token isn't BUSD or wBNB, we then use the quote token, of the original farm's quote token
+  // If the farm's quote token isn't USDC or wMATIC, we then use the quote token, of the original farm's quote token
   // i.e. for farm PNT - pBTC we use the pBTC farm's quote token - BNB, (pBTC - BNB)
-  // from the BNB - pBTC price, we can calculate the PNT - BUSD price
-  if (quoteTokenFarm.quoteToken.symbol === 'wBNB') {
+  // from the BNB - pBTC price, we can calculate the PNT - USDC price
+  if (quoteTokenFarm.quoteToken.symbol === 'wMATIC') {
     const quoteTokenInBusd = bnbPriceBusd.times(quoteTokenFarm.tokenPriceVsQuote)
     return hasTokenPriceVsQuote && quoteTokenInBusd
       ? new BigNumber(farm.tokenPriceVsQuote).times(quoteTokenInBusd)
       : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'BUSD') {
+  if (quoteTokenFarm.quoteToken.symbol === 'USDC') {
     const quoteTokenInBusd = quoteTokenFarm.tokenPriceVsQuote
     return hasTokenPriceVsQuote && quoteTokenInBusd
       ? new BigNumber(farm.tokenPriceVsQuote).times(quoteTokenInBusd)
       : BIG_ZERO
   }
 
-  // Catch in case token does not have immediate or once-removed BUSD/wBNB quoteToken
+  // Catch in case token does not have immediate or once-removed USDC/wMATIC quoteToken
   return BIG_ZERO
 }
 
 const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: BigNumber): BigNumber => {
-  if (farm.quoteToken.symbol === 'BUSD') {
+  if (farm.quoteToken.symbol === 'USDC') {
     return BIG_ONE
   }
 
-  if (farm.quoteToken.symbol === 'wBNB') {
+  if (farm.quoteToken.symbol === 'wMATIC') {
     return bnbPriceBusd
   }
 
@@ -61,11 +61,11 @@ const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: 
     return BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'wBNB') {
+  if (quoteTokenFarm.quoteToken.symbol === 'wMATIC') {
     return quoteTokenFarm.tokenPriceVsQuote ? bnbPriceBusd.times(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'BUSD') {
+  if (quoteTokenFarm.quoteToken.symbol === 'USDC') {
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
@@ -73,7 +73,7 @@ const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: 
 }
 
 const fetchFarmsPrices = async (farms) => {
-  const bnbBusdFarm = farms.find((farm: Farm) => farm.pid === 252)
+  const bnbBusdFarm = farms.find((farm: Farm) => farm.pid === 3)
   const bnbPriceBusd = bnbBusdFarm.tokenPriceVsQuote ? BIG_ONE.div(bnbBusdFarm.tokenPriceVsQuote) : BIG_ZERO
 
   const farmsWithPrices = farms.map((farm) => {
