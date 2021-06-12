@@ -61,7 +61,7 @@ const tokens = {
     symbol: 'SYRUP',
     address: {
       80001: '0x1bc18e1a9D7De2c73B0FF3944A538463E7B04E65',
-      137: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+      137: '0x1bc18e1a9d7de2c73b0ff3944a538463e7b04e65',
     },
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
