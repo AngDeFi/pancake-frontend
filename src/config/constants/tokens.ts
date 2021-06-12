@@ -12,8 +12,8 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
   },
-  wbnb: {
-    symbol: 'WBNB',
+  wmatic: {
+    symbol: 'WMATIC',
     address: {
       80001: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
       137: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
