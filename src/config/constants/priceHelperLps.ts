@@ -11,12 +11,12 @@ const priceHelperLps: FarmConfig[] = [
    */
   {
     pid: null,
-    lpSymbol: 'QSD-BNB LP',
+    lpSymbol: 'CAKE-BNB LP',
     lpAddresses: {
-      97: '',
-      56: '0x7b3ae32eE8C532016f3E31C8941D937c59e055B9',
+      80001: '',
+      137: '0x7b3ae32eE8C532016f3E31C8941D937c59e055B9',
     },
-    token: tokens.qsd,
+    token: tokens.cake,
     quoteToken: tokens.wbnb,
   },
 ]
