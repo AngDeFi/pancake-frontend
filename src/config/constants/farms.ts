@@ -13,7 +13,7 @@ const farms: FarmConfig[] = [
       137: '0x805262b407177c3a4aa088088c571164f645c5d0',
     },
     token: tokens.syrup,
-    quoteToken: tokens.wbnb,
+    quoteToken: tokens.wmatic,
   },
   {
     pid: 2,
