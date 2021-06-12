@@ -7,24 +7,24 @@ const farms: FarmConfig[] = [
    */
  
   {
-    pid: 251,
-    lpSymbol: 'CAKE-BNB LP',
+    pid: 1,
+    lpSymbol: 'CAKE-MATIC LP',
     lpAddresses: {
       80001: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
       137: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
     },
     token: tokens.cake,
-    quoteToken: tokens.wbnb,
+    quoteToken: tokens.wmatic,
   },
   {
-    pid: 252,
-    lpSymbol: 'BUSD-BNB LP',
+    pid: 2,
+    lpSymbol: 'USDT-MATIC LP',
     lpAddresses: {
       80001: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
       137: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
     },
-    token: tokens.busd,
-    quoteToken: tokens.wbnb,
+    token: tokens.usdt,
+    quoteToken: tokens.wmatic,
   },
   /**
    * V3 by order of release (some may be out of PID order due to multiplier boost)
