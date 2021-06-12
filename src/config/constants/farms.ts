@@ -9,8 +9,8 @@ const farms: FarmConfig[] = [
     pid: 0,
     lpSymbol: 'CAKE',
     lpAddresses: {
+      97: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
       137: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-      56: '',
     },
     token: tokens.syrup,
     quoteToken: tokens.wbnb,
@@ -19,8 +19,8 @@ const farms: FarmConfig[] = [
     pid: 251,
     lpSymbol: 'CAKE-BNB LP',
     lpAddresses: {
+      97: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
       137: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
-      56: '',
     },
     token: tokens.cake,
     quoteToken: tokens.wbnb,
@@ -29,8 +29,8 @@ const farms: FarmConfig[] = [
     pid: 252,
     lpSymbol: 'BUSD-BNB LP',
     lpAddresses: {
+      97: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
       137: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
-      56: '',
     },
     token: tokens.busd,
     quoteToken: tokens.wbnb,
