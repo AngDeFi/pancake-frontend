@@ -21,11 +21,11 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://polygon.technology/',
   },
-  busd: {
-    symbol: 'BUSD',
+  usdc: {
+    symbol: 'USDC',
     address: {
       80001: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-      137: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+      137: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     },
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
